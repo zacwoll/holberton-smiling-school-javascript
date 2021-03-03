@@ -8,6 +8,7 @@
     <meta name="description" content="Web page created following Figma design document">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="assets/holberton_school-icon/style.css">
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Coiny&display=swap" rel="stylesheet">
 
@@ -17,7 +18,6 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="X-styles.css">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
 </head>
@@ -105,253 +105,40 @@
             </div>
         </div>
     </section>
-
+    <!-- Carousel -->
+    <section class="bg-purple py-5">
+        <div class="loader"></div>
+        <div id="Quote-Carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner text-white col-12 mx-auto">
+                <a class="carousel-control-prev" href="#Quote-Carousel" role="button" data-slide="prev">
+                <span class="holberton_school-icon-arrow_4 text-white d-none d-sm-block" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#Quote-Carousel" role="button" data-slide="next">
+                <span class="holberton_school-icon-arrow_3 text-white d-none d-sm-block" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
     <!-- Popular tutorials -->
     <section class="mt-5">
         <h1 class="text-center py-5">Most <b class="text-purple">popular</b> tutorials</h1>
 
         <div class="container-fluid pb-5">
-            <!-- There are 3 carousels because we needed to show 1, 2, & 4 cards 
-                So in each carousel there are 1, 2, & 4 carousel-items even though there 
-                are 4 total cards. -->
-            <!-- mobile carousel -->
-            <div id="carousel-popular" class="carousel slide" data-ride="carousel" data-interval="false">
-                <div class="carousel-inner col-10 mx-auto">
-                    <!-- diagonal -->
-                    <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
-                        <div class="card d-block">
-                            <div class="thumb-4">
-                                <img class="card-img-top" src="assets/images/play.png" alt="">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text"><b>Diagonal Smile</b></p>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-                                <div class="d-flex">
-                                    <img src="assets/images/profile_1.jpg" alt="" class="avatar-sm rounded-circle">
-                                    <p class="text-purple mx-2">Philip Massey</p>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <div id="rating" class="d-flex">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_off.png" alt="">
-                                    </div>
-                                    <div id="time">
-                                        <p class="card-text text-purple">8 min</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- sad -->
-                    <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card d-block">
-                            <div class="thumb-3">
-                                <img class="card-img-top" src="assets/images/play.png" alt="">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text"><b>Sad Smile</b></p>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-                                <div class="d-flex">
-                                    <img src="assets/images/profile_1.jpg" alt="" class="avatar-sm rounded-circle">
-                                    <p class="text-purple mx-2">Philip Massey</p>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <div id="rating" class="d-flex">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2 " src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_off.png" alt="">
-                                    </div>
-                                    <div id="time">
-                                        <p class="card-text text-purple">8 min</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- natural -->
-                    <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card d-block">
-                            <div class="thumb-1">
-                                <img class="card-img-top" src="assets/images/play.png" alt="">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text"><b>Natural Smile</b></p>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-                                <div class="d-flex">
-                                    <img src="assets/images/profile_1.jpg" alt="" class="avatar-sm rounded-circle">
-                                    <p class="text-purple mx-2">Philip Massey</p>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <div id="rating" class="d-flex">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2 " src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_off.png" alt="">
-                                    </div>
-                                    <div id="time">
-                                        <p class="card-text text-purple">8 min</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- happy -->
-                    <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card d-block">
-                            <div class="thumb-2">
-                                <img class="card-img-top" src="assets/images/play.png" alt="">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text"><b>Happy Smile</b></p>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-                                <div class="d-flex">
-                                    <img src="assets/images/profile_1.jpg" alt="" class="avatar-sm rounded-circle">
-                                    <p class="text-purple mx-2">Philip Massey</p>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <div id="rating" class="d-flex">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2 " src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_off.png" alt="">
-                                    </div>
-                                    <div id="time">
-                                        <p class="card-text text-purple">8 min</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- diagonal -->
-                    <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card d-block">
-                            <div class="thumb-4">
-                                <img class="card-img-top" src="assets/images/play.png" alt="">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text"><b>Diagonal Smile</b></p>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-                                <div class="d-flex">
-                                    <img src="assets/images/profile_1.jpg" alt="" class="avatar-sm rounded-circle">
-                                    <p class="text-purple mx-2">Philip Massey</p>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <div id="rating" class="d-flex">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_off.png" alt="">
-                                    </div>
-                                    <div id="time">
-                                        <p class="card-text text-purple">8 min</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- sad -->
-                    <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card d-block">
-                            <div class="thumb-3">
-                                <img class="card-img-top" src="assets/images/play.png" alt="">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text"><b>Sad Smile</b></p>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-                                <div class="d-flex">
-                                    <img src="assets/images/profile_1.jpg" alt="" class="avatar-sm rounded-circle">
-                                    <p class="text-purple mx-2">Philip Massey</p>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <div id="rating" class="d-flex">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2 " src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_off.png" alt="">
-                                    </div>
-                                    <div id="time">
-                                        <p class="card-text text-purple">8 min</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- natural -->
-                    <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card d-block">
-                            <div class="thumb-1">
-                                <img class="card-img-top" src="assets/images/play.png" alt="">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text"><b>Natural Smile</b></p>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-                                <div class="d-flex">
-                                    <img src="assets/images/profile_1.jpg" alt="" class="avatar-sm rounded-circle">
-                                    <p class="text-purple mx-2">Philip Massey</p>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <div id="rating" class="d-flex">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2 " src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_off.png" alt="">
-                                    </div>
-                                    <div id="time">
-                                        <p class="card-text text-purple">8 min</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- happy -->
-                    <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card d-block">
-                            <div class="thumb-2">
-                                <img class="card-img-top" src="assets/images/play.png" alt="">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text"><b>Happy Smile</b></p>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-                                <div class="d-flex">
-                                    <img src="assets/images/profile_1.jpg" alt="" class="avatar-sm rounded-circle">
-                                    <p class="text-purple mx-2">Philip Massey</p>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <div id="rating" class="d-flex">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2 " src="assets/images/star_on.png" alt="">
-                                        <img class="img-star mr-2" src="assets/images/star_off.png" alt="">
-                                    </div>
-                                    <div id="time">
-                                        <p class="card-text text-purple">8 min</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="loader"></div>
+            <div id="carousel-popular" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner row w-75 mx-auto">
                 </div>
-                <a class="carousel-control-prev" href="#carousel-popular" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carousel-popular-sm" role="button" data-slide="prev">
                     <span class="holberton_school-icon-arrow_4 text-dark" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carousel-popular" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carousel-popular-sm" role="button" data-slide="next">
                     <span class="holberton_school-icon-arrow_3 text-dark" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            <!-- end mobile carousel -->
         </div>
     </section>
     <!-- Free membership -->

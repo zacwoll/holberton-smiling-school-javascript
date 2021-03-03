@@ -1,7 +1,34 @@
 $(document).ready(() => {
     generateQuoteCarousel();
-    //generatePopularCarousel();
+    generatePopularCarousel();
+    generateLatestCarousel();
+    $('.form-group input, .form-group select').change(function() {
+        let q = $('#keywords').val();
+        let topic = $('#select_topic').val();
+        let sort = $('#select_sort').val();
+        let data = {"q": q, "topic": topic, "sort": sort};
+        searchVideos(data);
+    });
+    $('form').on("submit", function(e){
+        e.preventDefault();
+    });
 });
+
+function searchVideos(data) {
+    $('#totalResults').html('');
+    $('#searchResults').html('');
+    $('.loader').show();
+    $.get('https://smileschool-api.hbtn.info/courses', data, (results) => {
+        let courses = results.courses;
+        $('#totalResults').html(`${courses.length} Videos`);
+        for (i in courses) {
+            let item = generateTutorialCard(courses[i]);
+            //console.log(item);
+            $('#searchResults').append(item);
+        }
+        $('.loader').hide();
+    });
+}
 
 function generateQuoteCarousel() {
     $.get('https://smileschool-api.hbtn.info/quotes',
@@ -38,10 +65,17 @@ function generateQuoteCard(data) {
 function generatePopularCarousel() {
     $.get('https://smileschool-api.hbtn.info/popular-tutorials',
     (data) => {
-        for (i in data) {
-            let item = generateTutorialCard(data[i]);
+        for (let i = 0; i < data.length; i++) {
+            let cardsPerItem = 4;
+
+            let item = document.createElement('div');
+            item.className = 'carousel-item';
             if (i == 0) {
                 item.className += ' active';
+            }
+            for (let j = 0; j < cardsPerItem; j++) {
+                let card = generateTutorialCard(data[(i + j) % data.length])
+                item.append(card);
             }
             $('[id^=carousel-popular] .carousel-inner').prepend(item);
         }
@@ -49,13 +83,34 @@ function generatePopularCarousel() {
     });
 }
 
+function generateLatestCarousel() {
+    $.get('https://smileschool-api.hbtn.info/latest-videos',
+    (data) => {
+        for (let i = 0; i < data.length; i++) {
+            let cardsPerItem = 4;
+
+            let item = document.createElement('div');
+            item.className = 'carousel-item';
+            if (i == 0) {
+                item.className += ' active';
+            }
+            for (let j = 0; j < cardsPerItem; j++) {
+                let card = generateTutorialCard(data[(i + j) % data.length])
+                item.append(card);
+            }
+            $('[id^=carousel-latest] .carousel-inner').prepend(item);
+        }
+        $('.loader').hide();
+    });
+}
+
 function generateTutorialCard(data) {
     let item = document.createElement('div');
-    item.className = 'carousel-item';
+    item.className = 'col-12 col-sm-6 col-md-4 col-lg-3 mb-4';
     item.innerHTML = `
     <div class="card">
-        <div class="thumb-4">
-            <img class="card-img-top" src="${data['thumb-url']}" alt="">
+        <div class="thumb-4" style="background-image: url(${data['thumb_url']}">
+            <img class="card-img-top" src="assets/images/play.png" alt="">
         </div>
         <div class="card-body">
             <p class="card-text"><b>${data['title']}</b></p>
@@ -95,15 +150,12 @@ jQuery(document).ready(function() {
         var idx = $e.index();
         var itemsPerSlide = 5;
         var totalItems = $('#carousel-popular .carousel-item').length;
-
-        console.log('Carousel Behind the scenes');
         
         if (idx >= totalItems-(itemsPerSlide-1)) {
             var it = itemsPerSlide - (totalItems - idx);
             for (var i=0; i<it; i++) {
                 // append slides to end
                 if (e.direction=="left") {
-                    console.log('fucked!');
                     $('.carousel-popular .carousel-item').eq(i).appendTo('.carousel-popular .carousel-inner');
                 }
                 else {

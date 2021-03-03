@@ -205,21 +205,6 @@ background-image: url(assets/images/thumbnail_4.jpg);
     100% { transform: rotate(360deg); }
 }
 
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
     display: flex;
 }
-
-/* 
-.carousel-inner .active,
-.carousel-inner .active + .carousel-item,
-.carousel-inner .active + .carousel-item + .carousel-item,
-.carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
-    display: block;
-    margin-right: auto;
-}
-
-.carousel-inner .carousel-item-right.active {
-  transform: translateX(25%);
-} */
